@@ -3,7 +3,7 @@ name: Playwright Tests
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   test:
@@ -11,6 +11,14 @@ jobs:
     steps:
       - name: Checkout código
         uses: actions/checkout@v3
+
+      - name: Cache npm
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Instalar Node.js
         uses: actions/setup-node@v3
@@ -24,4 +32,4 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Executar testes
-        run: npm test
+        run: npm test  # ou npx playwright test
