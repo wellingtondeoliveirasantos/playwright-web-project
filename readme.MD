@@ -53,7 +53,7 @@ Este projeto tem como objetivo criar uma base sólida para automação de testes
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/seu-repo.git
+   git clone git@github.com:wellingtondeoliveirasantos/playwright-web-project.git
    cd seu-repo
    ```
 
@@ -178,4 +178,4 @@ Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICEN
 ## Autor
 
 Wellington Santos  
-[GitHub](https://github.com/seu-usuario) | [LinkedIn](https://linkedin.com/in/seu-linkedin)
+[GitHub](https://github.com/wellingtondeoliveirasantos) | [LinkedIn](https://www.linkedin.com/in/wellington-staff-qa-expert/)
