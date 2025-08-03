@@ -1,0 +1,38 @@
+# Node modules
+node_modules/
+
+# Build outputs
+dist/
+out/
+lib/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# VSCode settings
+.vscode/
+
+# Playwright test outputs
+test-results/
+playwright-report/
+*.zip
+
+# Environment files
+.env
+.env.*
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Allure reports (caso use Allure)
+allure-results/
+allure-report/
+
+# Coverage reports (caso use cobertura)
+coverage/
