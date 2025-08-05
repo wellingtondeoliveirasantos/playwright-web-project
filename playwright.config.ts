@@ -5,9 +5,9 @@ export default defineConfig({
   timeout: 30000,
   retries: 1,
   use: {
-    headless: true,
-    viewport: { width: 1280, height: 720 },
+    headless: false,
+    viewport: { width: 1280, height: 960 },
     actionTimeout: 10000,
-    baseURL: 'https://phptravels.net/',
+    baseURL: 'https://automationexercise.com',
   },
 });

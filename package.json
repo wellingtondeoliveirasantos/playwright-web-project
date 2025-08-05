@@ -5,7 +5,11 @@
     "test": "npx playwright test"
   },
   "devDependencies": {
-    "@playwright/test": "^1.43.0",
+    "@playwright/test": "^1.54.2",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.9.0",
+    "dotenv": "^17.2.1"
   }
 }
