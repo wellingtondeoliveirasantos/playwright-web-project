@@ -1,6 +1,6 @@
 # Playwright Automation Project
 
-Automação de testes utilizando Playwright para a aplicação PHP Travels ([https://phptravels.net/](https://phptravels.net/)). Este projeto é voltado para estudos, evolução e prática em testes automatizados end-to-end.
+Automação de testes utilizando Playwright para a aplicação PHP Travels ([automationexercise](automationexercise)). Este projeto é voltado para estudos, evolução e prática em testes automatizados end-to-end.
 
 ---
 
@@ -25,7 +25,7 @@ Automação de testes utilizando Playwright para a aplicação PHP Travels ([htt
 
 ## Sobre o Projeto
 
-Este projeto tem como objetivo criar uma base sólida para automação de testes utilizando Playwright, configurado para rodar testes contra a aplicação PHP Travels. Ele serve como um ambiente de aprendizado para explorar diferentes recursos da ferramenta, desde testes simples até configurações mais avançadas.
+Este projeto tem como objetivo criar uma base sólida para automação de testes utilizando Playwright, configurado para rodar testes contra a aplicação [AutomationExercise](https://automationexercise.com/). Ele serve como um ambiente de aprendizado para explorar diferentes recursos da ferramenta, desde testes simples até configurações mais avançadas.
 
 ---
 
@@ -112,7 +112,7 @@ export default defineConfig({
     headless: false,         // Executa com navegador visível para facilitar debug
     viewport: { width: 1280, height: 720 },
     actionTimeout: 10000,    // Timeout para ações como clicks e navegações
-    baseURL: 'https://phptravels.net/',
+    baseURL: 'https://automationexercise.com',
   },
 });
 ```
