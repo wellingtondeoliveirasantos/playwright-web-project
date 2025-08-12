@@ -42,6 +42,8 @@ jobs:
       - name: Executar testes Playwright (headless)
         env:
           CI: true
+          USER_NAME: ${{ secrets.USER_NAME }}
+          USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
         run: npx playwright test --reporter=line
 
       - name: Upload artefatos do Playwright (report, screenshots, videos)
