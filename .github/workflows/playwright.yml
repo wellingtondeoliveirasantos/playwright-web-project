@@ -11,8 +11,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/playwright:v1.54.2-focal  # versão alinhada com seu @playwright/test
 
     steps:
       - name: Checkout código
@@ -38,7 +36,8 @@ jobs:
       - name: Instalar dependências
         run: npm ci
 
-      # REMOVIDO o step 'Instalar browsers do Playwright' pois já vem na imagem
+      - name: Instalar browsers do Playwright
+        run: npx playwright install --with-deps
 
       - name: Executar testes Playwright (headless)
         env:
