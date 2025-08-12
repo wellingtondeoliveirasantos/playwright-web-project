@@ -12,12 +12,15 @@ class LoginPage {
     await this.page.goto('/login');
   }
 
-  async login(user = process.env.USER_NAME, password = process.env.USER_PASSWORD) {
-    await this.gotoLoginPage();
-    await this.page.fill(this.emailField, user);
-    await this.page.fill(this.passwordField, password);
-    await this.page.click(this.loginButton);
-  }
+async login(user = process.env.USER_NAME, password = process.env.USER_PASSWORD) {
+  console.log('User:', user);
+  console.log('Password:', password ? '****' : 'undefined');
+  await this.gotoLoginPage();
+  await this.page.fill(this.emailField, user);
+  await this.page.fill(this.passwordField, password);
+  await this.page.click(this.loginButton);
+}
+
 }
 
 module.exports = { LoginPage };
