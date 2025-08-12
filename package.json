@@ -2,7 +2,9 @@
   "name": "playwright-web-tests",
   "version": "1.0.0",
   "scripts": {
-    "test": "npx playwright test"
+    "test": "npx playwright test",
+    "test:report": "npx playwright test --reporter=html && npx playwright show-report",
+    "test:ci": "npx playwright install --with-deps && npx playwright test --reporter=html"
   },
   "devDependencies": {
     "@playwright/test": "^1.54.2",
