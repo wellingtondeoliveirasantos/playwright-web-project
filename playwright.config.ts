@@ -1,13 +1,13 @@
-console.log('Variável CI no config:', process.env.CI);
-
 import { defineConfig } from '@playwright/test';
+
+console.log('Variável CI no config:', process.env.CI);
 
 export default defineConfig({
   testDir: './tests',
   timeout: process.env.CI ? 60000 : 30000,
   retries: 1,
   use: {
-    headless: true ,
+    headless: true,  // força rodar headless (no CI obrigatório)
     viewport: { width: 1280, height: 960 },
     actionTimeout: 10000,
     baseURL: 'https://automationexercise.com',

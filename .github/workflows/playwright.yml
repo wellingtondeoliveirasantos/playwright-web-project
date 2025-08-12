@@ -39,11 +39,10 @@ jobs:
       - name: Instalar browsers do Playwright
         run: npx playwright install --with-deps
 
-      - name: Executar testes Playwright (headless forçado)
+      - name: Executar testes Playwright (headless)
         env:
           CI: true
         run: npx playwright test --reporter=line
-        continue-on-error: true
 
       - name: Upload artefatos do Playwright (report, screenshots, videos)
         if: always()
