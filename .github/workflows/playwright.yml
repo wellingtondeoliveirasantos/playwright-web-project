@@ -1,12 +1,12 @@
-name: Playwright Tests
+name: Playwright Tests CI
 
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   test:
@@ -16,24 +16,40 @@ jobs:
       - name: Checkout código
         uses: actions/checkout@v3
 
-      - name: Instalar Node.js
+      - name: Verificar variável CI no ambiente
+        run: env | grep CI || echo "CI não definida"
+
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+          cache: 'npm'
+
+      - name: Cache npm
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Instalar dependências
         run: npm ci
 
-      - name: Rodar testes Playwright
-        run: npx playwright test
-        continue-on-error: true # Continua para permitir upload de artefatos mesmo com erro
+      - name: Instalar browsers do Playwright
+        run: npx playwright install --with-deps
 
-      - name: Fazer upload de screenshots e vídeos
+      - name: Executar testes Playwright (headless forçado)
+        env:
+          CI: true
+        run: npx playwright test --headless --reporter=line --workers=2
+        continue-on-error: true
+
+      - name: Upload artefatos do Playwright (report, screenshots, videos)
         if: always()
         uses: actions/upload-artifact@v3
         with:
           name: playwright-report
           path: |
-            test-results/
             playwright-report/
-          retention-days: 7
+            test-results/
