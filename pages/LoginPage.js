@@ -12,7 +12,7 @@ class LoginPage {
     await this.page.goto('/login');
   }
 
-async login(user = process.env.USER_NAME, password = process.env.USER_PASSWORD) {
+async login(user = "wellingtondeoliveirasanto@gmail.com", password = "datum") {
   console.log('User:', user);
   console.log('Password:', password ? '****' : 'undefined');
   await this.gotoLoginPage();
