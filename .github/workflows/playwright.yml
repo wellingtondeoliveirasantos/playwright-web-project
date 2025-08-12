@@ -12,7 +12,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:focal
+      image: mcr.microsoft.com/playwright:v1.54.2-focal  # versão alinhada com seu @playwright/test
 
     steps:
       - name: Checkout código
