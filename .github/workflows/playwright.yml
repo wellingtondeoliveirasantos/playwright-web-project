@@ -42,7 +42,7 @@ jobs:
       - name: Executar testes Playwright (headless forçado)
         env:
           CI: true
-        run: npx playwright test --headless --reporter=line --workers=2
+        run: npx playwright test --reporter=line
         continue-on-error: true
 
       - name: Upload artefatos do Playwright (report, screenshots, videos)
